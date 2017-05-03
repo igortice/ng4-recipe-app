@@ -5,19 +5,22 @@
 </div>
 <div class="row">
   <div class="col-md-12">
-    <a href="#" class="list-group-item clearfix" *ngFor="let recipe of recipes">
-      <div class="">
-        <h4 class="list-group-item-heading">{{recipe.name}}</h4>
-        <p class="list-group-item-text">{{recipe.description}}</p>
+    <div class="card my-3 rounded-0" *ngFor="let recipe of recipes">
+      <div class="card-block">
+        <div class="d-flex justify-content-between">
+          <div>
+            <h4 class="card-title">{{recipe.name}}</h4>
+            <p class="card-text">{{recipe.description}}</p>
+          </div>
+          <div>
+            <img
+            src="{{recipe.imagePath}}"
+            alt="{{recipe.name}}"
+            class="mx-auto d-block"
+            style="max-height: 70px;">
+          </div>
+        </div>
       </div>
-      <span class="">
-        <img
-          src="{{recipe.imagePath}}"
-          alt="{{recipe.name}}"
-          class="mx-auto d-block"
-          style="max-height: 50px;">
-      </span>
-    </a>
-    <app-recipe-item></app-recipe-item>
+    </div>
   </div>
 </div>
